@@ -19,4 +19,19 @@ Hooking up the PCF8591 module to your micocontroller is super easy. The only con
 
 
 
+###Compiling and Flashing
 
+My project is using an ATmega328p with a 16Mhz clock. Update CMakeLists.txt as needed:
+
+  * Microcontroller : `set(MCU   atmega328p)`
+  * Clockspeed : `set(F_CPU 16000000)`
+  * Programmer: `set(PROG_TYPE usbasp)`
+
+
+```
+git clone https://github.com/patrick--/avr-i2c-adc
+cd avr-i2c-adc
+mkdir build
+cd build
+cmake ..
+make flash
