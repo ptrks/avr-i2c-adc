@@ -10,10 +10,10 @@
 
 void mcu_init (void);
 
+/* Continuously reads analog value from channel 3 and then writes that analog value to the single DAC */
 int main(void) {
-    mcu_init();
+  mcu_init();
 	uint8_t value;
-	/* Continuously reads analog value from channel 3 and then writes that analog value to the single DAC */
 	for(;;) {
 		value = pcf8591_analog_read(AI_CH_3);
 		pcf8591_analog_write(value);
